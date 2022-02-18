@@ -6,6 +6,7 @@ from time import timezone
 # Create your models here. Or edit, but remember always makemigration afer that
  
 class Todo(models.Model):
+    #Estos seran los atributos que llamaremos en los templates
     description = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
 

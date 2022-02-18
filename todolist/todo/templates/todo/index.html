@@ -1,7 +1,8 @@
 {% if latest_todo_list %}
    <ul>
     {% for todo in latest_todo_list %}
-        <li><a href="/todo/{{todo.id}}"> {{ todo.todo_text }}</a></li>
+    {% comment %} en la linea que sigue, description corresponde a los atributos del model todo {% endcomment %}
+        <li><a href="/todo/{{ todo.id }}">{{ todo.description }}</a></li>
     {% endfor %}
    </ul>
 {% else %}
