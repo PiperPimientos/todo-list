@@ -1,4 +1,14 @@
+{% comment %} Aqui lo que quiero hacer es introducir un boton new para agregar nuevos To-do {% endcomment %}
 {% if latest_todo_list %}
+   <form action="" method="post">
+      {% csrf_token %} <!-- csrf token for basic security -->
+         <div class="inputContainer">
+            <input type="text" id="description" class="taskName" placeholder="What do you need to do?" name="description" required>
+            <label for="description">Description</label>
+         </div>
+         <div class="row">
+            <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
+        </div>
    <ul>
     {% for todo in latest_todo_list %}
     {% comment %} en la linea que sigue, description corresponde a los atributos del model todo {% endcomment %}
