@@ -8,9 +8,10 @@ def index(request):
     latest_todo_list = Todo.objects.all()
     if request.method == "POST":    
         if "taskAdd" in request.POST:
-            content = request.POST["description"]
-            content = Todo
-            content.save()
+            description = request.POST["description"]
+            date = str(request.POST["date"])
+            todo = Todo(description=description, pub_date=date)
+            todo.save()
             # Me pide un positional argument self para poder agregar el nuevo task
             return redirect("/")
     return render(request, "todo/index.html", {
